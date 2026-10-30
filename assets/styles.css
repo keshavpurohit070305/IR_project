@@ -1,0 +1,270 @@
+/* WanderWise - Premium Travel Discovery Theme */
+/* Inspired by Airbnb and Wanderlog */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
+:root {
+    --bg-warm: #FAF8F5;
+    --card-bg: #FFFFFF;
+    --text-primary: #1C2826;
+    --text-muted: #576561;
+    --forest-green: #1B4332;
+    --forest-green-light: #2D6A4F;
+    --forest-green-subtle: #D8F3DC;
+    --terracotta: #E07A5F;
+    --terracotta-subtle: #FDF0ED;
+    --amber: #F4A261;
+    --border-light: #E8E5DF;
+    --shadow-soft: 0 4px 20px rgba(27, 67, 50, 0.06);
+    --shadow-hover: 0 10px 30px rgba(27, 67, 50, 0.12);
+    --radius-lg: 16px;
+    --radius-md: 10px;
+    --radius-pill: 9999px;
+}
+
+/* Base application styling */
+.stApp {
+    background-color: var(--bg-warm);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+}
+
+/* Header & Typography */
+h1, h2, h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--forest-green);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--forest-green);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+/* Custom Hero Container */
+.hero-container {
+    background: linear-gradient(135deg, rgba(216, 243, 220, 0.45) 0%, rgba(253, 240, 237, 0.55) 100%);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2.2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-soft);
+}
+
+/* Destination Card Component */
+.wander-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.wander-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: #B7E4C7;
+}
+
+.wander-card-img-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #E9ECEF;
+}
+
+.wander-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.wander-card:hover .wander-card-img {
+    transform: scale(1.04);
+}
+
+.wander-card-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(27, 67, 50, 0.90);
+    backdrop-filter: blur(8px);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.wander-card-type-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    color: var(--forest-green);
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+}
+
+.wander-card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.wander-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--forest-green);
+    margin: 0 0 4px 0;
+}
+
+.wander-card-location {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.wander-card-desc {
+    font-size: 0.9rem;
+    color: #374151;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+
+.wander-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #F3F4F6;
+    margin-top: auto;
+}
+
+.wander-card-price {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--forest-green-light);
+}
+
+.wander-card-duration {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background-color: #F3F4F6;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+/* Tag & Chip pills */
+.badge-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+.badge-green {
+    background-color: var(--forest-green-subtle);
+    color: var(--forest-green);
+}
+
+.badge-orange {
+    background-color: var(--terracotta-subtle);
+    color: var(--terracotta);
+}
+
+.badge-gray {
+    background-color: #EFEFEF;
+    color: #4A5568;
+}
+
+/* Search suggestions pills */
+.suggestion-pill {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-light);
+    color: var(--text-muted);
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+    margin: 4px;
+}
+
+.suggestion-pill:hover {
+    background-color: var(--forest-green-subtle);
+    color: var(--forest-green);
+    border-color: #B7E4C7;
+}
+
+/* Viva Info Box */
+.viva-box {
+    background-color: #FFFFFF;
+    border-left: 4px solid var(--forest-green);
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 1.2rem;
+}
+
+.viva-title {
+    font-weight: 700;
+    color: var(--forest-green);
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+}
+
+.viva-math {
+    background-color: #F8F9FA;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    margin: 8px 0;
+    border: 1px dashed #CED4DA;
+}
+
+/* Streamlit button enhancements */
+div.stButton > button {
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+div.stButton > button:hover {
+    border-color: var(--forest-green);
+    box-shadow: 0 2px 8px rgba(27, 67, 50, 0.15);
+}
